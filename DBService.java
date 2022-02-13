@@ -1,4 +1,11 @@
-import java.net.URI;
+//---------------------------------------------------------------------------------------|
+/**
+ *  University of Arkansas | Software Engineering (Spring 2022) | Mr. Strother | Team 3
+ *  Change Date: February 13th, 2022 (Henry Schmidt)
+ *  DBService Class: Control our connection with the PostgreSQL database and passes
+ *  information to the classes that need it 
+ */
+//---------------------------------------------------------------------------------------|
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,7 +31,7 @@ public class DBService {
         String dbUrl = System.getenv("JDBC_DATABASE_URL");
         return DriverManager.getConnection(dbUrl);
     }
-    
+
     public void test(){
         try {
             getConnection();
