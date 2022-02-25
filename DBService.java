@@ -40,7 +40,8 @@ public class DBService {
         }
     }
     
-    //Creating a player in the Database
+    //Creating a player in the database
+    //Use SQL commands to modifiy the database with these methods
     public create_player(int id, String first_name, String last_name, String codename){
     }
     
