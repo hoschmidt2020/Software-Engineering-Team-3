@@ -8,6 +8,7 @@
 //---------------------------------------------------------------------------------------|
 
 import java.awt.Toolkit;
+
 import splashScreen.splashScreen;
 
 public class ApplicationRun{

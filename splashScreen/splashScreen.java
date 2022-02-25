@@ -6,7 +6,8 @@ package splashScreen;
 
 /**
  *
- * @author pjrios
+ * @author pjrios, sabubakarq
+ *
  */
 public class splashScreen extends javax.swing.JFrame {
 
@@ -120,7 +121,7 @@ public class splashScreen extends javax.swing.JFrame {
                 Thread.sleep(100);
 
                 //change loading message
-                if(i==10){LoadingText.setText("Preparing interface...");}
+                if(i==10){LoadingText.setText("  Preparing interface...");}
                 else if(i==20){LoadingText.setText("  Prepating lazers...");}
                 else if(i==30){LoadingText.setText("  Loading backgrounds...");}
                 else if(i==40){LoadingText.setText("  Connecting to network...");}
@@ -130,7 +131,7 @@ public class splashScreen extends javax.swing.JFrame {
                 else if(i==80){LoadingText.setText("  You are almost there...");}
                 else if(i==90){LoadingText.setText("  Are you ready?");}
                 else if(i==100){
-                    LoadingText.setText(" Loading complete...");
+                    LoadingText.setText("  Loading complete...");
                     Thread.sleep(100);
                 }
                 LoadingBar.setValue(i);
