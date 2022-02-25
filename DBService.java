@@ -39,4 +39,16 @@ public class DBService {
             e.printStackTrace();
         }
     }
+    
+    //Creating a player in the Database
+    public create_player(int id, String first_name, String last_name, String codename){
+    }
+    
+    //Removing a player in the Database
+    public remove_player(int id){
+    }
+    
+    //Modifing a player in the Database
+    public modify_player(int id){
+    }
 }
