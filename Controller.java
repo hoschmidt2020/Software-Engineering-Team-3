@@ -8,6 +8,7 @@
 //---------------------------------------------------------------------------------------|
 
 import java.awt.event.MouseListener;
+import java.util.concurrent.ConcurrentHashMap.KeySetView;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -30,6 +31,11 @@ public class Controller implements MouseListener, KeyListener{
     @Override
     public void keyPressed(KeyEvent e) {
         // TODO Auto-generated method stub
+        switch(e.getKeyCode())
+        {
+            // Added by Abubakar Qasim - Feb 24th, enable faster testing
+            case KeyEvent.VK_ESCAPE: System.out.println("--Exiting--"); System.exit(0); break;
+        }
         
     }
 
