@@ -11,5 +11,5 @@ if %errorlevel% neq 0 (
 ) else (
 	echo [+] Compilation complete. Running application...
 	java ApplicationRun
-	del *.class
+	del /s /q *.class
 )
