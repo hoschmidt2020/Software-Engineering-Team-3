@@ -6,14 +6,21 @@ set -u -e
 # Run this function if script is aborted before due to an error
 on_exit() {
     echo "[-] There was an error; exiting now."
-    rm *.class
 }
 trap on_exit ERR
 
-# Compile java files into bytecode and store them in the dist folder
-javac splashScreen/splashScreen.java ApplicationRun.java Controller.java DBService.java Graphics.java View.java
+# Clean out all persisting class files
+if [ -d dist ]; then 
+    rm -r dist 
+fi
+
+# Compile .java files from source list, and store bytecode in dist
+find -name "*.java" > sources.txt
+javac -d ./dist @sources.txt
 echo "[+] Compilation complete. Running application..."
 
+# FIXME manually copying image directory from splashscreen into dist
+cp -r ./splashScreen/images ./dist/splashScreen
+
 # Run bytecode from the dist folder using the JVM 
-java ApplicationRun
-rm *.class
+java -cp ./dist ApplicationRun
