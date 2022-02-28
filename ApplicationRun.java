@@ -22,6 +22,8 @@ public class ApplicationRun {
         splashScreen splashScr = new splashScreen();
         splashScr.start();
         ApplicationRun ApplRn = new ApplicationRun();
+        DBService db = new DBService();
+        db.test();
         ApplRn.run();
     }
 
