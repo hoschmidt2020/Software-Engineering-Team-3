@@ -1,11 +1,11 @@
 
 // Graphical libraries
-import javax.swing.JFrame;
-import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+import javax.swing.JCheckBox;
 import javax.swing.JButton;
-import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -15,10 +15,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PlayerEntry extends JFrame {
-    // Serialization value(s)
-    private static final long serialVersionUID = 1L;
-
+public class PlayerEntry {
     // Constants
     private final int maxEntries = 17;
     private final Font myFont = new Font("Serif", Font.BOLD, 24);
@@ -34,22 +31,18 @@ public class PlayerEntry extends JFrame {
     /**
      * Creates player entry screen
      */
-    PlayerEntry() {
+    PlayerEntry(JFrame jFrame) {
         // Create title panel and add it to the top of the window
         JPanel titlePanel = makeTitlePanel();
-        add(titlePanel, "North");
+        jFrame.add(titlePanel, "North");
 
         // Create team panels and add them in the center of the window
         JPanel teamsPanel = new JPanel(new GridLayout(0, 2));
-        System.out.println(blueChecks.toString());
-        System.out.println(redChecks.toString());
         JPanel teamPanelRed = teamPanel(Color.red, "Red Team", redChecks, redTexts1, redTexts2);
         JPanel teamPanelBlue = teamPanel(Color.blue, "Blue Team", blueChecks, blueTexts1, blueTexts2);
-        System.out.println(blueChecks.toString());
-        System.out.println(redChecks.toString());
         teamsPanel.add(teamPanelRed);
         teamsPanel.add(teamPanelBlue);
-        add(teamsPanel, "Center");
+        jFrame.add(teamsPanel, "Center");
 
         // Add function title
         JPanel modesPanel = new JPanel(new GridLayout(2, 1));
@@ -57,13 +50,11 @@ public class PlayerEntry extends JFrame {
         JPanel functionPanel = makeFunctionPanel();
         modesPanel.add(modePanel);
         modesPanel.add(functionPanel);
-        add(modesPanel, "South");
+        jFrame.add(modesPanel, "South");
 
-        // TODO We already have a file in the repo that creates the game window, so we could pass in the size from there
         // Set size
-        setTitle("Entry Terminal");
-        setSize(700, 700);
-        setVisible(true);
+        jFrame.setTitle("Entry Terminal");
+
     }
 
     /**
@@ -102,7 +93,6 @@ public class PlayerEntry extends JFrame {
         modePanel.add(modeLabel);
 
         return modePanel;
-
     }
 
     /**
@@ -115,12 +105,10 @@ public class PlayerEntry extends JFrame {
      * @param texts2     player names
      * @return teamPanel
      */
-    public JPanel teamPanel(Color bgColor, String team, JCheckBox[] checkboxes, JTextField[] texts1,
-            JTextField[] texts2) {
+    public JPanel teamPanel(Color bgColor, String team, JCheckBox[] checkboxes, JTextField[] texts1, JTextField[] texts2) {
 
         JPanel teamPanel = new JPanel();
 
-        // TODO If we have a dynamic window size, this might need to based on the window size we set in the constructor
         // Create an entry panel with
         JPanel entryPanel = new JPanel(new GridLayout(maxEntries + 2, 1));
         entryPanel.setPreferredSize(new Dimension(300, 500));
@@ -234,15 +222,4 @@ public class PlayerEntry extends JFrame {
 
         return functionPanel;
     }
-
-    /**
-     * Main method
-     * 
-     * @param args command line arguments
-     */
-    public static void main(String[] args) {
-        new PlayerEntry();
-
-    }
-
 }

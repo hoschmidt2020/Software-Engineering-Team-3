@@ -1,59 +1,26 @@
-//---------------------------------------------------------------------------------------|
-/**
- *  University of Arkansas | Software Engineering (Spring 2022) | Mr. Strother | Team 3
- *  Change Date: February 13th, 2022 (Henry Schmidt)
- *  View Class: Controls the screen we are looking at and the GUI components
- */
-//---------------------------------------------------------------------------------------|
+
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Font;
 
-public class View implements ActionListener{
+public class View {
+    JFrame jFrame;
     Controller controller;
-    JLabel jlab;
+    PlayerEntry playerEntry;
 
-    //------------------------------------------------------------------------------|
-    //  View Constructor
-    //------------------------------------------------------------------------------|
-    View(){
-        controller = new Controller();
+    View(Controller controller) {
+        // Define member variables
+        this.controller = controller;
+        this.jFrame = new JFrame();
 
-        JFrame jfrm = new JFrame();
-        JPanel jpnl = new JPanel();
+        // Create application window
+        this.jFrame.setTitle("Placeholder Title");
+        this.jFrame.setSize(750, 750);
+        this.jFrame.setResizable(false);
+        this.jFrame.setFocusable(true);
+        this.jFrame.setVisible(true);
+        this.jFrame.setLocationRelativeTo(null);
+        this.jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Set title of our application window
-        jfrm.setTitle("Laser Tag Application");
-        // Set the size of the application window
-        jfrm.setSize(750,750);
-        jfrm.setFocusable(true);
-        // Set the application to close when the window does
-        jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // Allocate our key and mouse listeners
-        jfrm.addKeyListener(controller);
-        jfrm.addMouseListener(controller);
-
-        // This creates the menu bar
-        jlab = new JLabel("Welcome to Laser Tag Tracker!");
-        jlab.setFont(new Font("Serif", Font.PLAIN, 36));
-
-        // Add our label to our panel and then our panel to our frame
-        jpnl.setBackground(Color.GREEN);
-        jpnl.add(jlab);
-        jfrm.add(jpnl);
-
-        // Make the window visible
-        jfrm.setVisible(true);
+        // Load player entry screen
+        this.playerEntry = new PlayerEntry(this.jFrame);
     }
-   
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        
-    }
-
 }
