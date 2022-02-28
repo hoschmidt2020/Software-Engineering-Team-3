@@ -44,15 +44,40 @@ public class DBService {
     //Use SQL commands to modifiy the database with these methods
     public void create_player(int id, String first_name, String last_name, String codename){
         
+        // Pseudo:
+
+        //Statement statement = conn.createStatement();
+        //ResultSet rs = stmt.executeQuery("
+        //INSERT INTO table_name (c1, c2, ...)
+        //VALUES (id, first_name, last_name, codename);
+        //");
     }
 
     //Removing a player in the Database
     public void remove_player(int id){
 
+        // Pseudo:
+
+        //Statement statement = conn.createStatement();
+        //ResultSet rs = stmt.executeQuery("
+        //DELETE FROM table_name WHERE col"id" = id;
+        //");
+
     }
 
     //Modifing a player in the Database
-    public void modify_player(int id){
+    public void modify_player(int id, String first_name, String last_name, String codename){
+        
+        // Pseudo:
 
+        //Statement statement = conn.createStatement();
+        //ResultSet rs = stmt.executeQuery("
+        //UPDATE table_name
+        //SET c1 = first_name, c2 = last_name, c3 = codename
+        //WHERE id = (ex.);
+        //");
+        
+        
+        
     }
 }
