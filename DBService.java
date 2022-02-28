@@ -23,16 +23,6 @@ public class DBService {
 
     }
 
-    // private static Connection getConnection() throws URISyntaxException, SQLException {
-    // URI dbUri = new URI(System.getenv("DATABASE_URL"));
-
-    // String username = dbUri.getUserInfo().split(":")[0];
-    // String password = dbUri.getUserInfo().split(":")[1];
-    // String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
-
-    // return DriverManager.getConnection(dbUrl, username, password);
-    // }
-
     private Connection getConnection() {
        
         Connection conn = null;
@@ -50,16 +40,19 @@ public class DBService {
         getConnection();
     }
 
-    // //Creating a player in the database
-    // //Use SQL commands to modifiy the database with these methods
-    // public create_player(int id, String first_name, String last_name, String codename){
-    // }
+    //Creating a player in the database
+    //Use SQL commands to modifiy the database with these methods
+    public void create_player(int id, String first_name, String last_name, String codename){
+        
+    }
 
-    // //Removing a player in the Database
-    // public remove_player(int id){
-    // }
+    //Removing a player in the Database
+    public void remove_player(int id){
 
-    // //Modifing a player in the Database
-    // public modify_player(int id){
-    // }
+    }
+
+    //Modifing a player in the Database
+    public void modify_player(int id){
+
+    }
 }
