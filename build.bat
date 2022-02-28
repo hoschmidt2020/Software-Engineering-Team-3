@@ -4,9 +4,8 @@
 :: Clean out all persisting class files
 if exist dist ( rmdir /s /q dist )
 
-:: Compile .java files from source list, and store bytecode in dist
-dir /s /b *.java > sources.list 
-javac -d ./dist @sources.list
+:: Compile .java files from source list, and store bytecode in dist 
+javac -d ./dist *.java
 
 :: FIXME manually copying image directory from splashscreen into dist
 xcopy "./splashScreen/images" "./dist/splashScreen/images" /i /q >nul

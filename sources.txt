@@ -1,7 +1,0 @@
-./ApplicationRun.java
-./Controller.java
-./DBService.java
-./Graphics.java
-./PlayerEntry.java
-./splashScreen/splashScreen.java
-./View.java

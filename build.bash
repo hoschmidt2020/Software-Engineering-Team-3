@@ -14,9 +14,8 @@ if [ -d dist ]; then
     rm -r dist 
 fi
 
-# Compile .java files from source list, and store bytecode in dist
-find -name "*.java" > sources.txt
-javac -d ./dist @sources.txt
+# Compile .java files, and store bytecode in dist
+javac -d ./dist *.java
 echo "[+] Compilation complete. Running application..."
 
 # FIXME manually copying image directory from splashscreen into dist
