@@ -112,7 +112,7 @@ public class splashScreen extends javax.swing.JFrame {
         try {
             // Increase loading bar percentage
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(100);
+                Thread.sleep(30);
 
                 // change loading message
                 if (i == 10) {
